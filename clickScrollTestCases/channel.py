@@ -19,7 +19,7 @@ def action():
         print("--channel list open successfully")
         button.openChannel(ind=1).click()
         print("--channel opens successfully")
-        button.findText("Followers").click()
+        button.findText("followers").click()
         print("--channel follower list opens successfully")
         button.follower_followingList().scroll.vert.forward(steps=10)
         button.follower_followingList().scroll.vert.backward(steps=10)

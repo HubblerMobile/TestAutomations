@@ -1,4 +1,4 @@
-from automation_support import button, adbCmd, printMsg, setUp,\
+from automation_support import button, adbCmd, printMsg, setUp, \
     variables
 from automation_support import TClogIn
 import os
@@ -6,6 +6,7 @@ import time
 from localUiautomator.uiautomator import device
 from itertools import count
 from random import random, randint
+
 
 def backLoop(count):
     print("-----asserting device back")
@@ -21,30 +22,31 @@ def backLoop(count):
         backLoop(count)
     return
 
+
 def cycle(elements):
-    
     try:
         count = 0
         while count <= 20:
             count += 1
-#             print("length of array : ",elements.__len__())
+            #             print("length of array : ",elements.__len__())
             noElement = True
-            while noElement :
-                elementIndex = randint(0,elements.__len__()-1)
+            while noElement:
+                elementIndex = randint(0, elements.__len__() - 1)
                 element = elements[elementIndex]
                 elementProperty = element.info
-                if elementProperty['clickable'] or elementProperty['longClickable'] or elementProperty['scrollable'] or elementProperty['focusable']:
+                if elementProperty['clickable'] or elementProperty['longClickable'] or elementProperty['scrollable'] or \
+                        elementProperty['focusable']:
                     noElement = False
-                back = randint(0,5)
+                back = randint(0, 5)
                 if back == 2:
-#                     time.sleep(2)
+                    #                     time.sleep(2)
                     print("-----asserting device back")
                     button.deviceBack()
                     elements = button.getAllEle()
             if elementProperty['clickable']:
                 print("-----asserting click")
                 element.click()
-                wa = randint(0,5)
+                wa = randint(0, 5)
                 if wa == 1:
                     time.sleep(2)
                 elements = button.getAllEle()
@@ -53,7 +55,7 @@ def cycle(elements):
                 element.long_click()
                 elements = button.getAllEle()
             elif elementProperty['scrollable']:
-                up = randint(0,1)
+                up = randint(0, 1)
                 if up == 1:
                     element.scroll.vert.forward(steps=10)
                     print("-----asserting forward scroll")
@@ -67,8 +69,8 @@ def cycle(elements):
                 element.set_text("some")
                 elements = button.getAllEle()
         print("out of loop")
-#         backLoop(0)
-#         raise ValueError('mannual exception')
+    #         backLoop(0)
+    #         raise ValueError('mannual exception')
     except Exception as e:
         adbCmd.stopApp("mobi.hubbler.app")
         print(e)
@@ -77,6 +79,7 @@ def cycle(elements):
         elements = button.getAllEle()
         print(elements[0].info)
         cycle(elements)
+
 
 def message():
     try:
@@ -92,6 +95,8 @@ def message():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         pass
+
+
 def notification():
     try:
         button.notification().click()
@@ -105,6 +110,8 @@ def notification():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         pass
+
+
 def group():
     try:
         button.menu().click()
@@ -119,6 +126,8 @@ def group():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         pass
+
+
 def channel():
     try:
         button.menu().click()
@@ -133,6 +142,8 @@ def channel():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         pass
+
+
 def poll():
     try:
         button.menu().click()
@@ -147,6 +158,8 @@ def poll():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         pass
+
+
 def event():
     try:
         button.menu().click()
@@ -161,6 +174,8 @@ def event():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         pass
+
+
 def profile():
     try:
         button.menu().click()
@@ -175,6 +190,8 @@ def profile():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         pass
+
+
 def mainSearch():
     try:
         button.search().click()
@@ -188,6 +205,7 @@ def mainSearch():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         pass
+
 
 def action():
     message()
@@ -206,13 +224,16 @@ def action():
     print("poll")
     event()
     print("event")
-    
+
+
 def monkey():
     count = 0
     while count <= 20:
         adbCmd.runMonkey()
         count += 1
-    count = 0    
+    count = 0
+
+
 def menue():
     try:
         button.menu().click()
@@ -225,6 +246,8 @@ def menue():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         menue()
-if __name__=="__main__":
+
+
+if __name__ == "__main__":
     adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
     action()

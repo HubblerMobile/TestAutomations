@@ -1,7 +1,6 @@
 import inspect, os
 import sys
 import time
-from uiautomator import device
 
 def printException(e,file):
     try:
