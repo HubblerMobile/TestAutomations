@@ -12,6 +12,7 @@ def action():
     resp = []
     try:
         adbCmd.stopApp("mobi.hubbler.app")
+        "just a comment"
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         print("\n\n")
         button.menu().click()
