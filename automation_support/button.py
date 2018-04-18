@@ -619,3 +619,22 @@ def backPollDetailsPage():
 def backPollAllPages():
     return d(className="android.widget.ImageView")[0]
 "end poll"
+
+"end post"
+def like():
+    return d(resourceId="mobi.hubbler.app:id/ivLike")
+def likeList():
+    return d(resourceId="mobi.hubbler.app:id/tvLike")
+def comment():
+    return d(resourceId="mobi.hubbler.app:id/commentLayout")
+def post():
+    return d(resourceId="mobi.hubbler.app:id/content_section")
+def postActionOption():
+    return  d(resourceId="mobi.hubbler.app:id/overflow_menu")
+def postUser():
+    return  d(resourceId="mobi.hubbler.app:id/head_section")
+def postGroup():
+    return d(resourceId="mobi.hubbler.app:id/header")
+def backPostPage():
+    return  d(resourceId="mobi.hubbler.app:id/ivBackButton")
+"post"
