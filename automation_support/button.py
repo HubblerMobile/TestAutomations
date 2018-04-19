@@ -7,8 +7,15 @@ from automation_support import variables, printMsg
 d = device
 arr = []
 "general"
+def scrollView():
+    return d(className="android.widget.ScrollView")
+def back():
+    return d(className="android.widget.ImageButton")
+def recycleView():
+    return d(className="android.support.v7.widget.RecyclerView")
 
-
+def findTextContain(txt):
+    return d(textContains=txt)
 def listView():
     return d(className="android.widget.ListView")
 
@@ -638,3 +645,39 @@ def postGroup():
 def backPostPage():
     return  d(resourceId="mobi.hubbler.app:id/ivBackButton")
 "post"
+
+"attendance"
+def selfHistory():
+    return d(resourceId="mobi.hubbler.app:id/action_history")
+def teamHistory():
+    return d(resourceId="mobi.hubbler.app:id/action_inbox")
+def previousDate():
+    return d(resourceId="mobi.hubbler.app:id/prev_btn")
+def nextDate():
+    return d(resourceId="mobi.hubbler.app:id/next_btn")
+def locationFilter():
+    return d(resourceId="mobi.hubbler.app:id/action_filter")
+def callMessageOption():
+    return d(resourceId="mobi.hubbler.app:id/overflow_menu")
+def userHeader():
+    return d(resourceId="mobi.hubbler.app:id/header_author_block")
+def backAttendance():
+    return d(className="android.widget.ImageButton")[0]
+def attendanceApp():
+    return d(textContains="Attendance")
+"end attendance"
+
+"leave"
+def leaveFilter():
+    return d(resourceId="mobi.hubbler.app:id/action_filter")
+def teamViewLeave():
+    return d(resourceId="mobi.hubbler.app:id/action_manager")
+def leaveTeamViewSearch():
+    return d(resourceId="mobi.hubbler.app:id/search_button")
+def leaveTeamViewSearchClear():
+    return d(resourceId="mobi.hubbler.app:id/search_close_btn")
+def leaveDetailsUserHeader():
+    return d(resourceId="mobi.hubbler.app:id/profileLayout")
+def backLeaveDetaislPage():
+    return d(resourceId="mobi.hubbler.app:id/imageView1")
+"end leave"
