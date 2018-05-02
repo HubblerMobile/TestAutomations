@@ -13,6 +13,7 @@ def action():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         print("\n\n")
+        print("-------channel-------")
         button.menu().click()
         print("menue opens successfully")
         button.findText("Channels").click()

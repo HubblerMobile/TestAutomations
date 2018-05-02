@@ -13,6 +13,8 @@ def action():
     try:
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
+        print("\n\n")
+        print("------post--------")
         button.like().click()
         print("--Post liked successfully")
         button.likeList().click()

@@ -14,6 +14,7 @@ def action():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         print("\n\n")
+        print("------event-------")
         button.menu().click()
         button.findText("Events").click()
         print("--events opens successfully")

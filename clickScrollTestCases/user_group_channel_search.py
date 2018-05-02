@@ -11,6 +11,8 @@ def action():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         "back code"
+        print("\n\n")
+        print("-------main search--------")
         button.search().click()
         print("--user_channel_group search opens successfully")
         button.appBack().click()
@@ -71,4 +73,4 @@ def action():
 if __name__=="__main__":
     print(time.time())
     action()
-    print(time.time())
+    # print(time.time())

@@ -14,6 +14,7 @@ def action():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         button.findText("Apps").click()
+        print("-------reimbursement--------")
         print("--apps are loading successfully")
         button.findTextContain('Reimbursement').click()
         print ("--reimbursment app clicked to open")

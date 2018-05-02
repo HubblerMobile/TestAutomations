@@ -13,6 +13,7 @@ def action():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         print("\n\n")
+        print("------group------")
         button.menu().click()
         button.findText("Groups").click()
         print("--group list open successfully")

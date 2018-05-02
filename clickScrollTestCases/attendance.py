@@ -14,6 +14,7 @@ def action():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         button.findText("Apps").click()
+        print("-------attendance--------")
         print("--apps are loading successfully")
         button.findTextContain('Attendance').click()
         print("--attendance is opening successfully")
