@@ -84,4 +84,4 @@ if __name__=="__main__":
     adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
     elements = button.getAllEle()
     print(elements[0].info)
-    cycle(elements,0)
+    cycle(elements)

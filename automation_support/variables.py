@@ -1,8 +1,8 @@
 s=2
 
 user = {
-    "otp":"1221",
-    "user1_number":"8431469858",
+    "otp":"122221",
+    "user1_number":"8431469851",
     "user2_number":"1112223335"
     }
 post={

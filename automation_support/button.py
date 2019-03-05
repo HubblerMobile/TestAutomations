@@ -68,9 +68,17 @@ def takeScreenShort(self,file=None):
     except Exception as e:
         printMsg.printException(e,os.path.basename(__file__))
 "end general"
+
 "login action"
+
+def searchCountryCode():
+    return d(resourceId="mobi.hubbler.app:id/search_button")
+def resendOtp():
+    return d(resourceId="mobi.hubbler.app:id/resend")
+def countryCode():
+    return d(resourceId="mobi.hubbler.app:id/countryCode")
 def contin():
-    return d(resourceId="mobi.hubbler.app:id/continueButton")
+    return d(resourceId="mobi.hubbler.app:id/submitBtn")
 def logOut():
     return d(resourceId='mobi.hubbler.app:id/design_menu_item_text', text='Logout')
 def logoutDn():
@@ -78,6 +86,16 @@ def logoutDn():
 def hubbler2Account():
     return d(text = "hubbler 2")
 "end login actions"
+
+"myday buttons"
+"end myday buttons"
+
+"Quick Action button"
+def more():
+    return d(className="android.widget.FrameLayout", description="More")
+def menu():
+    return more()
+"end quick action button"
 
 "channel buttons"
 def channelFollower():
@@ -211,8 +229,8 @@ def backGroupAddMember():
 "end group buttons"
 
 "top buttons"
-def menu():
-    return d(resourceId='mobi.hubbler.app:id/menuIcon')
+# def menu():
+#     return d(resourceId='mobi.hubbler.app:id/menuIcon')
 def search():
     return d(resourceId='mobi.hubbler.app:id/searchButton')
 def message():
