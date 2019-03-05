@@ -1,4 +1,4 @@
-from automation_support import button, adbCmd, printMsg, setUp,\
+from automation_support import button, adbCmd, printMsg, setUp, \
     variables
 from automation_support import TClogIn
 import os
@@ -8,12 +8,13 @@ from pprint import pprint
 from random import random, randint
 from adbCmd import adb
 
+
 def backLoop(count):
     print("-----asserting device back")
     if count > 5:
         return
     button.deviceBack()
-#     time.sleep(1)
+    #     time.sleep(1)
     elements = button.getAllEle()
     if elements.__len__() > 0:
         cycle(elements)
@@ -22,28 +23,29 @@ def backLoop(count):
         backLoop(count)
     return
 
+
 def cycle(elements):
-    
     try:
-        print("count of elements",elements.__len__())
+        print("count of elements", elements.__len__())
         while elements.__len__() > 0:
             noElement = True
-            while noElement :
-                elementIndex = randint(0,elements.__len__()-1)
+            while noElement:
+                elementIndex = randint(0, elements.__len__() - 1)
                 element = elements[elementIndex]
                 elementProperty = element.info
-                if elementProperty['clickable'] or elementProperty['longClickable'] or elementProperty['scrollable'] or elementProperty['focusable']:
+                if elementProperty['clickable'] or elementProperty['longClickable'] or elementProperty['scrollable'] or \
+                        elementProperty['focusable']:
                     noElement = False
-                back = randint(0,5)
+                back = randint(0, 5)
                 if back == 2:
-#                     time.sleep(2)
+                    #                     time.sleep(2)
                     print("-----asserting device back")
                     button.deviceBack()
                     elements = button.getAllEle()
             if elementProperty['clickable']:
                 print("-----asserting click")
                 element.click()
-                wa = randint(0,5)
+                wa = randint(0, 5)
                 if wa == 1:
                     time.sleep(2)
                 elements = button.getAllEle()
@@ -52,7 +54,7 @@ def cycle(elements):
                 element.long_click()
                 elements = button.getAllEle()
             elif elementProperty['scrollable']:
-                up = randint(0,1)
+                up = randint(0, 1)
                 if up == 1:
                     element.scroll.vert.forward(steps=10)
                     print("-----asserting forward scroll")
@@ -76,9 +78,9 @@ def cycle(elements):
         elements = button.getAllEle()
         print(elements[0].info)
         cycle(elements)
-    
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
     elements = button.getAllEle()
     print(elements[0].info)

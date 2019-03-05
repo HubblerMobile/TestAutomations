@@ -3,7 +3,7 @@ import clickScrollTestCases
 import time
 import datetime
 from automation_support import adbCmd
-from clickScrollTestCases import userProfile,user_group_channel_search,channel,group,message
+from clickScrollTestCases import userProfile,user_group_channel_search,channel,group,message,events
 # for root, dirs, files in os.walk("clickScrollTestCases"):
 #     print(files)
 #     for filename in files:
@@ -20,12 +20,12 @@ if __name__=="__main__":
     curr = datetime.datetime.now()
     print("start time ",curr.strftime("%Y-%m-%d %H:%M:%S"))
     print("started")
-#     userProfile.action()
+    userProfile.action()
     channel.action()
     group.action()
+    events.action()
     user_group_channel_search.action()
     message.action()
-#     group.action()
     print("stopped")
     curr = datetime.datetime.now()
     print("start time ",curr.strftime("%Y-%m-%d %H:%M:%S"))

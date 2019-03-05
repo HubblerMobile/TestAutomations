@@ -13,6 +13,7 @@ def action():
         adbCmd.stopApp("mobi.hubbler.app")
         adbCmd.launchApp("mobi.hubbler.app", "StartActivity")
         "MsgMessanger open close"
+        print("------message-------")
         button.MsgMessanger().click()
         print("--message opens successfully")
         time.sleep(1)
